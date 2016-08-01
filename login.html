@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html >
+  <head>  
+    <title>Log in</title>
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css'>
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+<body>
+<body ng-controller="LoginCtrl" ng-app="myApp">
+  <div class="container">
+    <div id="loginModal" aria-labelledby="loginModalLabel">
+      <div class="signup-screen">
+        <div class="space-bot text-center" id="loginModalLabel">
+          <h1>Log in</h1>
+          <div class="divider"></div>
+        </div>
+        <form class="form-register" method="post" name="register" novalidate>
+          <div class="input-field col s6">
+            <input id="email" type="email" name="email" ng-model="email" class="validate" required>
+            <label for="email">Email</label>
+          </div>
+          <p class="alert alert-danger" ng-show="form-register.email.$error.email">Your email is invalid.</p>
+          <div class="input-field col s6">
+            <input id="password" type="password" name="password" ng-model="password" ng-minlength='6' class="validate" required>
+            <label for="password">Password</label>
+          </div>
+          <div class="space-top text-center">
+            <button ng-disabled="form-register.$invalid" class="waves-effect waves-light btn done">
+               <i class="material-icons left">done</i> Log in
+               </button>
+            <button type="button" class="waves-effect waves-light btn cancel" ng-click="cancel()">
+               <i class="material-icons left">clear</i>Cancel
+               </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+<script src='http://code.jquery.com/jquery-2.1.4.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js'></script>
+<script src="js/index.js"></script>
+</body>
+</html>
